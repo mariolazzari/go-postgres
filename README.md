@@ -67,4 +67,5 @@ curl -X DELETE 127.0.0.1:8000/posts/4 -H "Accept: application/json"
 go mod init github.com/mariolazzari/go-postgres
 go install github.com/air-verse/air@latest
 go get github.com/jackc/pgx/v5
+go mod tidy
 ```
