@@ -19,21 +19,14 @@ psql -h localhost -U postgres -d postgres -p 6543
 #### Setup for a table to store some data
 
 ```sql
-CREATE SEQUENCE Posts_id_seq;
 
-CREATE TABLE public.posts
+CREATE TABLE posts
 (
-	id integer NOT NULL DEFAULT nextval('Posts_id_seq'::regclass),
-	title text COLLATE pg_catalog."default",
-	body text COLLATE pg_catalog."default",
-	CONSTRAINT "Posts_pkey" PRIMARY KEY (id)
-)
-WITH
-(
-	OIDS = FALSE
-)
+    id serial PRIMARY KEY,
+    title text,
+    body text
+);
 
-TABLESPACE pg_default;
 
 ALTER TABLE public.posts OWNER to postgres;
 
